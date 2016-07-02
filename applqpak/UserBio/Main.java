@@ -51,12 +51,78 @@ public class Main extends PluginBase
 
       saveResource("config.yml");
 
-
     }
 
     this.config = getConfig();
 
     this.getLogger().info(TextFormat.GREEN + "Enabled");
+
+  }
+
+  @Override
+
+  public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+  {
+
+    switch(cmd.getName().toLowerCase())
+    {
+
+      case "bio":
+
+        if(args.length == 0)
+        {
+
+          sender.sendMessage(TextFormat.RED + "Invalid usage. Usage: " + this.USAGE);
+
+        }
+        else
+        {
+
+          if(args[0].equaslIgnoreCase("version"))
+          {
+
+            sender.sendMessage(TextFormat.YELLOW + "-- UserBio version --");
+
+            sender.sendMessage(TextFormat.GREEN + this.VERSION);
+
+          }
+          else if(args[0].equalsIgnoreCase("set"))
+          {
+
+            if(args.length == 1)
+            {
+
+              sender.sendMessage(TextFormat.RED + "Invalid usage. Usage: " + this.USAGE);
+
+            }
+            else
+            {
+
+              args[0] = "";
+
+              String message = this.implode(" ", args);
+
+              this.config.set(sender.getName().toLowerCase(), message);
+
+              this.config.save();
+
+              sender.sendMessage(TextFormat.GREEN + "Sucessfully set your bio!");
+
+            }
+
+          }
+          else if(args[0].equalsIgnoreCase("see"))
+          {
+
+          }
+
+        }
+
+      break;
+
+    }
+
+    return true;
 
   }
 

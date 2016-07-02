@@ -114,6 +114,34 @@ public class Main extends PluginBase
           else if(args[0].equalsIgnoreCase("see"))
           {
 
+            if(args.length == 1)
+            {
+
+              sender.sendMessage(TextFormat.RED + "Invalid usage. Usage: " + this.USAGE);
+
+            }
+            else
+            {
+
+              if(this.config.exists(args[0].toLowerCase()))
+              {
+
+                String bio = String.valueOf(this.config.get(args[0].toLowerCase());
+
+                sender.sendMessage(TextFormat.YELLOW + "-- " + args[0] + "'s bio --");
+
+                sender.sendMessage(TextFormat.GREEN + bio);
+
+              }
+              else
+              {
+
+                sender.sendMessage(TextFormat.RED + args[0] + " doesn't have a bio.");
+
+              }
+
+            }
+
           }
 
         }

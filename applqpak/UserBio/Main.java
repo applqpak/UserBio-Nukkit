@@ -78,7 +78,7 @@ public class Main extends PluginBase
         else
         {
 
-          if(args[0].equaslIgnoreCase("version"))
+          if(args[0].equalsIgnoreCase("version"))
           {
 
             sender.sendMessage(TextFormat.YELLOW + "-- UserBio version --");

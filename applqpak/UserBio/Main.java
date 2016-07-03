@@ -123,12 +123,12 @@ public class Main extends PluginBase
             else
             {
 
-              if(this.config.exists(args[0].toLowerCase()))
+              if(this.config.exists(args[1].toLowerCase()))
               {
 
                 String bio = String.valueOf(this.config.get(args[1].toLowerCase()));
 
-                sender.sendMessage(TextFormat.YELLOW + "-- " + args[0] + "'s bio --");
+                sender.sendMessage(TextFormat.YELLOW + "-- " + args[1] + "'s bio --");
 
                 sender.sendMessage(TextFormat.GREEN + bio);
 
@@ -136,7 +136,7 @@ public class Main extends PluginBase
               else
               {
 
-                sender.sendMessage(TextFormat.RED + args[0] + " doesn't have a bio.");
+                sender.sendMessage(TextFormat.RED + args[1] + " doesn't have a bio.");
 
               }
 

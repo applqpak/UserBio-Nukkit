@@ -126,7 +126,7 @@ public class Main extends PluginBase
               if(this.config.exists(args[0].toLowerCase()))
               {
 
-                String bio = String.valueOf(this.config.get(args[0].toLowerCase());
+                String bio = String.valueOf(this.config.get(args[0].toLowerCase()));
 
                 sender.sendMessage(TextFormat.YELLOW + "-- " + args[0] + "'s bio --");
 
